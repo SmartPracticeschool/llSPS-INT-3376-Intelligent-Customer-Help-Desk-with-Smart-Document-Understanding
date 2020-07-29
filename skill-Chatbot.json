@@ -1,0 +1,749 @@
+{
+  "intents": [
+    {
+      "intent": "Enquiry",
+      "examples": [
+        {
+          "text": "Menu please"
+        },
+        {
+          "text": "menu"
+        },
+        {
+          "text": "any discount"
+        },
+        {
+          "text": "offfers available"
+        },
+        {
+          "text": "Any specials available"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "thank_you",
+      "examples": [
+        {
+          "text": "thank you for your help"
+        },
+        {
+          "text": "thank you"
+        },
+        {
+          "text": "Thank you for your assistance"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "WI-FI_Configuration",
+      "examples": [
+        {
+          "text": "wi-fi configuration steps"
+        },
+        {
+          "text": "how to configure wi-fi"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Wiring_Configuration",
+      "examples": [
+        {
+          "text": "wiring configuration"
+        },
+        {
+          "text": "how to configure wiring"
+        },
+        {
+          "text": "steps to configure wiring"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "order",
+      "examples": [
+        {
+          "text": "my order is"
+        },
+        {
+          "text": "place my order"
+        },
+        {
+          "text": "my takeout is"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "ga"
+        },
+        {
+          "text": "ge"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Good Afternoon"
+        },
+        {
+          "text": "Good Morning"
+        },
+        {
+          "text": "Heya"
+        },
+        {
+          "text": "gm"
+        },
+        {
+          "text": "Hi"
+        },
+        {
+          "text": "Good evening"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "Food_items",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Burger",
+          "synonyms": [
+            "brgr",
+            "classic burger"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sundae",
+          "synonyms": [
+            "Ice cream",
+            "Chocolate Sundae",
+            "Strawberry Sundae",
+            "Vanilla Sundae",
+            "choc-ice"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Drinks",
+          "synonyms": [
+            "Cold drink",
+            "soda",
+            "carbonated drink",
+            "soft drink",
+            "cola"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "thank_you",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "thank you",
+          "synonyms": [
+            "thnk u",
+            "thank u",
+            "thank you very much",
+            "thank you so much",
+            "thnk you"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Greetings",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Good Evening",
+          "synonyms": [
+            "ge",
+            "gud eve",
+            "eve",
+            "evening",
+            "gud evening",
+            "good eve"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Morning",
+          "synonyms": [
+            "gm",
+            "gud mrng",
+            "good mrng",
+            "mrng",
+            "gud morning"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Good Afternoon",
+          "synonyms": [
+            "Ga",
+            "Gud afternoon",
+            "Gud aftrnoon",
+            "Good aftrnoon",
+            "afternoon",
+            "aftrnoon"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Wi-fi_configuration",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "wi-fi configuration",
+          "synonyms": [
+            "wi-fi config",
+            "wifi config",
+            "wi fi configuration"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Enquiry",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "offers",
+          "synonyms": [
+            "discount",
+            "cutoff",
+            "decrement",
+            "price slash"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "menu",
+          "synonyms": [
+            "specials",
+            "food list",
+            "spcl",
+            "dish items",
+            "items"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "wiring_Configuration",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "wiring configuration",
+          "synonyms": [
+            "wiring config"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-number",
+      "values": [],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "webhooks": [
+    {
+      "url": "https://eu-gb.functions.appdomain.cloud/api/v1/web/shubhanipandey8%40gmail.com_dev/default/Action-1.json",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Enter the item name:"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_4_1595101252045",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1595101252053",
+      "previous_sibling": "handler_9_1595101252053"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_4_1595101252045",
+      "context": {
+        "Food_items": "@Food_items"
+      },
+      "conditions": "@Food_items",
+      "event_name": "input",
+      "dialog_node": "handler_9_1595101252053"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your welcome! Your order will reach you shortly.Enjoy your meal."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1596025999385",
+      "conditions": "@thank_you",
+      "dialog_node": "response_5_1596026026116"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Evening! How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1595098808155",
+      "conditions": "@Greetings:(Good Evening)",
+      "dialog_node": "response_7_1595099466594",
+      "previous_sibling": "response_6_1595099440733"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Morning! How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1595098808155",
+      "conditions": "@Greetings:(Good Morning)",
+      "dialog_node": "response_6_1595099440733",
+      "previous_sibling": "response_10_1595099322127"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello! How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1595098808155",
+      "conditions": "anything_else",
+      "dialog_node": "response_4_1595099513657",
+      "previous_sibling": "response_7_1595099466594"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good Afternoon! How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_8_1595098808155",
+      "conditions": "@Greetings:(Good Afternoon)",
+      "dialog_node": "response_10_1595099322127"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Can't find response for your enquiry .Please try again with different keywords."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1595100032645",
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1595965118237",
+      "previous_sibling": "response_9_1595962020843"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "\"<?$webhook_result_1.results[0].text?>\""
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_10_1595100032645",
+      "conditions": "$webhook_result_1",
+      "dialog_node": "response_9_1595962020843"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "text": {
+          "values": [
+            "Can't find response for your enquiry .Please try again with different keywords."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "node_4_1595968237702",
+      "conditions": "anything_else",
+      "dialog_node": "response_7_1595968273241",
+      "previous_sibling": "response_6_1595968270407"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "\"<?$webhook_result_2.results[0].text?>\""
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1595968237702",
+      "conditions": "$webhook_result_2",
+      "dialog_node": "response_6_1595968270407"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1595101231620",
+      "variable": "$number",
+      "dialog_node": "slot_7_1595101307172",
+      "previous_sibling": "slot_4_1595101252045"
+    },
+    {
+      "type": "slot",
+      "parent": "node_10_1595101231620",
+      "variable": "$Food_items",
+      "dialog_node": "slot_4_1595101252045",
+      "previous_sibling": "handler_1_1595101251197"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_10_1595101231620",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1595101251197",
+      "previous_sibling": "node_2_1595101563747"
+    },
+    {
+      "type": "standard",
+      "title": "Delete content",
+      "output": {
+        "deleted": "<?context.remove('Food_items')?><?context.remove('number')?>",
+        "generic": [
+          {
+            "values": [],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_10_1595101231620",
+      "conditions": "true",
+      "dialog_node": "node_2_1595101563747"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "title": "Menu",
+            "source": "https://d4t7t8y8xqo0t.cloudfront.net/resized/1080X/restaurant%2F653339%2Fmenu%2Fmenu11523531746211.jpg",
+            "response_type": "image"
+          }
+        ]
+      },
+      "parent": "node_2_1595968081837",
+      "conditions": "@Enquiry:menu",
+      "dialog_node": "response_7_1595968154510",
+      "previous_sibling": "response_9_1595968113197"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Current Offer: 1) 20% on orders above Rs.1000  2)30% off on orders above Rs.1500"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_2_1595968081837",
+      "conditions": "@Enquiry:offers",
+      "dialog_node": "response_9_1595968113197"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Enter the quantity:"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1595101307172",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1595101307176",
+      "previous_sibling": "handler_5_1595101307176"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1595101307172",
+      "context": {
+        "number": "@sys-number"
+      },
+      "conditions": "@sys-number",
+      "event_name": "input",
+      "dialog_node": "handler_5_1595101307176"
+    },
+    {
+      "type": "standard",
+      "title": "GREETINGS",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Greetings || @Greetings",
+      "dialog_node": "node_8_1595098808155",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1596025999385",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "WIFI CONFIGURATION",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "input": "<?input.text?>"
+          },
+          "result_variable": "webhook_result_2"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#WI-FI_Configuration",
+      "dialog_node": "node_4_1595968237702",
+      "previous_sibling": "node_8_1595098808155"
+    },
+    {
+      "type": "standard",
+      "title": "ORDER ENQUIRY",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Enquiry || @Enquiry",
+      "dialog_node": "node_2_1595968081837",
+      "previous_sibling": "node_10_1595100032645"
+    },
+    {
+      "type": "standard",
+      "title": "WIRING CONFIG",
+      "actions": [
+        {
+          "name": "main_webhook",
+          "type": "webhook",
+          "parameters": {
+            "input": "<?input.text?>"
+          },
+          "result_variable": "webhook_result_1"
+        }
+      ],
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#Wiring_Configuration",
+      "dialog_node": "node_10_1595100032645",
+      "previous_sibling": "node_4_1595968237702"
+    },
+    {
+      "type": "standard",
+      "title": "THANK YOU",
+      "metadata": {
+        "_customization": {
+          "mcr": true
+        }
+      },
+      "conditions": "#thank_you || @thank_you",
+      "dialog_node": "node_4_1596025999385",
+      "previous_sibling": "node_10_1595101231620"
+    },
+    {
+      "type": "frame",
+      "title": "ORDER",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your order of $number $Food_items is placed successfully."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "skip_user_input"
+      },
+      "conditions": "#order",
+      "dialog_node": "node_10_1595101231620",
+      "previous_sibling": "node_2_1595968081837"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello! I am a demo customer care virtual assistant for BURGER PLACE. I can hep with queries regarding menu and in your order."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Chatbot",
+  "language": "en",
+  "description": ""
+}
